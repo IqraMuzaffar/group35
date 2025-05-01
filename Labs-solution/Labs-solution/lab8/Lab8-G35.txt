@@ -1,0 +1,36 @@
+    
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Prompt1>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+prompt = f"""
+You are a data cleaning assistant. Clean the following record:
+
+{record.to_dict()}
+
+Cleaning tasks:
+- Fill missing values by inferring from context (e.g., infer city from address).
+- Correct any spelling mistakes.
+- Standardize capitalization and formatting.
+- Ensure address format: "Street, Borough, NY".
+- Format date/time using ISO 8601 (YYYY-MM-DD).
+- Add a new column and Categorize complaint types into clear labels like "Noise", "Non-Noise", It cannot be null.
+YOU have to ONLY RETURN the cleaned record as a JSON dictionary no additional data no extra lines.
+
+"""
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Prompt2>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    prompt = f"""
+You are a Python validation assistant.
+
+Given the cleaned NYC 311 data record below:
+
+{record}
+
+Write a Python function named `validate_record(record)` that:
+- Uses `assert` statements to validate:
+  - Required fields (e.g., 'unique_key', 'created_date', 'complaint_type', 'incident_address', 'city') are present and not null
+  - Dates follow ISO 8601 format (YYYY-MM-DD or YYYY-MM-DDTHH:MM:SSZ)
+  - 'complaint_type' is either "Noise" or "Non-Noise"
+  - 'incident_address' contains the string "NY"
+  - Numeric fields like 'bbl' and coordinates are positive numbers
+
+Return only the function code. Do not include any explanation or commentary.
+"""

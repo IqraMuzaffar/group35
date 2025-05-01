@@ -1,0 +1,7 @@
+"user_id,content_id,action,timestamp,device,region,session_id"
+"101,1001,play,2023-09-01 08:23:55,mobile,US,session_1234"
+"102,1002,pause,2023-09-01 09:10:21,desktop,EU,session_5678"
+"103,1003,skip,2023-09-02 12:45:33,tablet,APAC,session_9101"
+"104,1004,forward,2023-09-02 14:30:45,mobile,US,session_1121"
+"105,1005,play,2023-09-03 16:20:10,desktop,EU,session_3141"
+"106,1006,skip,2023-09-03 17:55:50,tablet,APAC,session_5161"
